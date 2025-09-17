@@ -9,10 +9,12 @@ main () {
     println(SoundIntensity)
 
     // Задача 2
-    var Price: Double? = null
+    var Price: Double? = 100.00
+    var DeliveryCost: Double? = 120.00
     var InsuranceCoefficient = 0.005
-    var FullDeliveryPrice = (Price ?: 50) + ((Price ?: 50) * InsuranceCoefficient)
-    println(ItemDelivery)
+    var InsuarenceCost = ((Price ?: 50.00) * InsuranceCoefficient)
+    var FullDeliveryCost = DeliveryCost + InsuarenceCost
+    println(FullDeliveryCost)
 
     // Задача 3
     var AtmospherePressure: Int? = null

@@ -15,12 +15,12 @@ fun main () {
 
     // Обратный диапазон
     // Создайте цикл for, который выводит числа от 5 до 1.
-    for (i2 in 5 DownTO 1) {
+    for (i2 in 5 downTO 1) {
         println(i)
     }
 
     // Создайте цикл for, который выводит числа от 10 до 1, уменьшая их на 2.
-    for (i3 in 10 DownTo 1) {
+    for (i3 in 10 downTo 1) {
         println(i3 - 2)
     }
 

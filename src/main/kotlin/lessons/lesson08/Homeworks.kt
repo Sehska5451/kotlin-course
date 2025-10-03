@@ -67,10 +67,10 @@ fun exercise5(arg: String) {
 //Используйте split. Используйте for для перебора слов. Используйте var переменную для накопления первых букв.
 
 fun exercise6(arg: String) {
-    val parts = arg.split(" ")
-    var counter = 0
-    for(i in 1..6) {
-
+    val words = arg.split(" ")
+    var counter = ""
+    for(i in words) {
+        counter += i[0].uppercase()
     }
-    println(parts)
+    println(counter)
 }

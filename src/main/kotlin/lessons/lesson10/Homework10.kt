@@ -11,7 +11,7 @@ fun main() {
     m3[3] = "String3"
 //Используя словарь из предыдущего задания, извлеките значение, используя ключ. Попробуй получить значение с ключом, которого в словаре нет.
     if(3 in m3) {
-        println(m3["String3"])
+        println(m3[3])
     } else {
         println("Key not found")
     }
@@ -21,7 +21,7 @@ fun main() {
     val m4 = mapOf<Double, Int>(1.11 to 1, 2.22 to 2, 3.33 to 3)
     for((key, value) in m4) {
         if(value == 0) {
-            println("0")
+            println("Infinity")
         }
         println(key % value)
     }
@@ -30,7 +30,7 @@ fun main() {
 //Создайте два словаря и объедините их в третьем изменяемом словаре через циклы.
     val m5 = mapOf<Int, Int>(1 to 2, 2 to 3, 3 to 4)
     val m6 = mapOf<Int, Int>(4 to 5, 5 to 6, 6 to 7)
-    val m7: MutableMap<Int, Int> = Map(m6.size)
+    val m7: MutableMap<Int, Int> = mutableMapOf()
 
     for((key1, value1) in m5) {
         m7[key1] = value1
@@ -53,14 +53,15 @@ fun main() {
     println(m9[2])
     m9[2] = mutableSetOf<String>("String4", "String5", "String6", "String10")
 //Создай словарь, где ключами будут пары чисел. Через перебор найди значение у которого пара будет содержать цифру 5 в качестве первого или второго значения.
-    val m10 = mapOf(
-        listOf<Int>(1, 2) to "String1",
-        listOf<Int>(3, 4) to "String1",
-        listOf<Int>(5, 6) to "String1",
+    val m10 = mapOf<Map<Int,Int>, Map<Int, Int>>(
+        mapOf(1 to 2) to mapOf(3 to 4),
+        mapOf(3 to 4) to mapOf(5 to 6),
+        mapOf(5 to 6) to mapOf(6 to 7),
+        mapOf(6 to 7) to mapOf(8 to 9)
     )
     for((key2, value2) in m10) {
-        if(key2 == 5) {
-            println(key2)
+        if(m10[value2] == 5) {
+            println(m10[value2])
             break
         }
     }
@@ -74,5 +75,5 @@ fun main() {
 //Курс лечения: Ключи - даты, значения - список препаратов принимаемых в дату
     val m14 = mutableMapOf<String, List<String>>()
 //Словарь путешественника: Ключи - страны, значения - словари из городов со списком интересных мест.
-    val m15 = mutableMapOf<String, Map<String, String>>()
+    val m15 = mutableMapOf<String, List<String>>()
 }

@@ -32,13 +32,13 @@ fun main () {
 // 12. Отфильтровать коллекцию по диапазону 18-30
     println(homework12.filter { it in 18..30 })
 // 13. Выбрать числа, которые не делятся на 2 и 3 одновременно
-    println(homework12.filter { it % 3 > 0 || it % 2 > 0 })
+    println(homework12.filterNot { it % 3 > 0 && it % 2 > 0 })
 // 14. Очистить текстовую коллекцию от null элементов
-    println(textCollection1.)
+    println(textCollection1.filterNotNull())
 // 15. Преобразовать текстовую коллекцию в коллекцию длин слов
     println(textCollection1.map { it.length })
 // 16. Преобразовать текстовую коллекцию в мапу, где ключи - перевёрнутые слова, а значения - длина слов
-    println(textCollection1.associate { it.reversed() to it.length })
+    println(textCollection1.associate { it?.reversed() to it.length })
 // 17. Отсортировать список в алфавитном порядке
     println(textCollection1.sorted())
 // 18. Взять первые 3 элемента списка
@@ -50,7 +50,7 @@ fun main () {
 // 21. Очистить список от дублей
     println(textCollection1.distinct())
 // 22. Отсортировать список по убыванию
-    println(homework12.sortedByDescending())
+    println(homework12.sortedDescending())
 // 23. Взять последние 3 элемента списка
     println(homework12.takeLast(3))
     val list = listOf(
@@ -78,7 +78,7 @@ fun a1(a: List<Int>): String {
 //Если длина строки образованная склеиванием коллекции в строку равна 20 - “Клейкая”
         a.joinToString("").length == 20 -> "Клейкая"
 //Если максимальное число меньше -10 - “Отрицательная”
-        a.maxOrNull()?.let { it < 10 } -> "Отрицательная"
+        a.maxOrNull()?.let { it < -10 } -> "Отрицательная"
 //Если минимальное число больше 1000 - “Положительная”
         a.minOrNull()?.let { it > 1000 } -> "Положительная"
 //Если содержит одновременно числа 3 и 14 - “Пи***тая”
@@ -132,6 +132,6 @@ fun a5(a: List<Int>): Map<String, Int> {
 //Начальные значения: val ages = listOf(22, 18, 30, 45, 17, null, 60) и число для проверки возраста, например 18.
 //Цель: Найти первый возраст в списке, который соответствует условию (больше второго аргумента) и вернуть его, либо null если значения не нашлось.
 fun a6(a: List<Int>, b: Int): Int? {
-    a.filter { it > b }
-    return a
+    val result = a.filterNotNull().firstOrNull() { it > b}
+    return result
 }

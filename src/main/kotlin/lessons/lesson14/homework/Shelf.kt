@@ -1,26 +1,37 @@
 package main.kotlin.lessons.lesson14.homework
 
-class Shelf(val capacity: Int, val items: mutableList<String>) {
+class Shelf(val capacity: Int) {
+    private val items = MutableList<String>()
     fun addItem(itemName: String): Boolean {
-        if(itemName.length < capacity) {
+        if(canAccommodate(itemName)) {
             items.add(itemName)
-        } else return
+            return true
+        } else return false
     }
     fun removeItem(itemName: String): Boolean {
         if(items.contains(itemName)) {
             items.remove(itemName)
-        }
-        return
+            return true
+        } else {
+        return false
+            }
     }
-    fun canAccommodate(itemName: String) {
-        if(itemName.length < capacity)
-            return
+    fun canAccommodate(itemName: String): Boolean {
+        val space = items.sumOf { it.lenght }
+        if(itemName.length + space <= capacity) {
+            return true
+        } else {
+            return false
+        }
     }
     fun containsItem(itemName: String): Boolean {
-        if(items.contains(itemName))
-            return
+        if (items.contains(itemName)) {
+            return true
+        } else {
+            return false
+        }
     }
-    fun getItems() {
-        println(items)
+    fun getItems(): List<String> {
+        return items.toList()
     }
 }

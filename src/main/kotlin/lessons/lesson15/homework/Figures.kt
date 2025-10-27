@@ -1,7 +1,17 @@
 package main.kotlin.lessons.lesson15.homework
 
-class Figures(val length: Double, val height: Double) {
-    fun square() {
-        length * height
-    }
+//Геометрические Фигуры
+//Базовый класс: Геометрическая Фигура
+open class Figures(val square: Double) {
 }
+//Производные классы: Многоугольник, Круг
+open class advancedFigures(
+    square: Double,
+    val radius: Double
+): Figures(square)
+
+//Дополнительное разветвление для Многоугольник: Треугольник, Четырехугольник
+open class moreAdvancedFigures(
+    square: Double,
+    val angeQuantity: Int
+) : Figures(square)

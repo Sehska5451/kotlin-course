@@ -24,7 +24,7 @@ fun main() {
         println("Площадь фигуры: ${"%.2f".format(shape.area())}")
     }
     //3
-    val text = "Kotlin is a modern statically typed programming language that boosts developer productivity"
+    val text = "Text text text text test test"
 
     val laserPrinter = LaserPrinter()
     val inkjetPrinter = InkjetPrinter()

@@ -145,7 +145,7 @@ fun main() {
 //23 Для словаря с оценками производительности различных версий приложения (ключи - строковая версия, значения - дробное число времени ответа сервера)
 // увеличьте каждую оценку на 10%, чтобы учесть новые условия тестирования.
     val performanceTesting = mapOf<String, Double>("Test1" to 0.3, "Test2" to 0.5, "Test3" to 0.9, "Test4" to 0.025)
-    val newPerformanceTesting = performanceTesting.mapValues { it + (0.1 * it) }
+    val newPerformanceTesting = performanceTesting.mapValues { it.value * 1.1 }
     println(newPerformanceTesting)
 
 //24 Проверьте, пуст ли словарь с ошибками компиляции тестов.

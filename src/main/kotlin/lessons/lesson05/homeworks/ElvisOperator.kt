@@ -1,6 +1,6 @@
-package main.lessons.lesson05.homeworks
+package main.kotlin.lessons.lesson05.homeworks
 
-main () {
+fun main () {
 
     // Задача 1
     var PrimarySoundintensity: Double = 10.0 // значение для примера
@@ -10,7 +10,7 @@ main () {
 
     // Задача 2
     var Price: Double? = 100.00
-    var DeliveryCost: Double? = 120.00
+    var DeliveryCost: Double = 120.00
     var InsuranceCoefficient = 0.005
     var InsuarenceCost = ((Price ?: 50.00) * InsuranceCoefficient)
     var FullDeliveryCost = DeliveryCost + InsuarenceCost

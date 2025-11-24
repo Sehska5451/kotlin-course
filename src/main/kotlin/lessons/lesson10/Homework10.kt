@@ -22,8 +22,9 @@ fun main() {
     for((key, value) in m4) {
         if(value == 0) {
             println("Infinity")
+        } else {
+            println(key / value)
         }
-        println(key % value)
     }
 //Измените значение для существующего ключа в изменяемом словаре.
     m3[2] = "String2022"
@@ -51,7 +52,7 @@ fun main() {
         3 to mutableSetOf("String7", "String8", "String9")
     )
     println(m9[2])
-    m9[2] = mutableSetOf<String>("String4", "String5", "String6", "String10")
+    //m9[2] = mutableSetOf<String>("String4", "String5", "String6", "String10")
 //Создай словарь, где ключами будут пары чисел. Через перебор найди значение у которого пара будет содержать цифру 5 в качестве первого или второго значения.
     val m10 = mapOf<Map<Int,Int>, Map<Int, Int>>(
         mapOf(1 to 2) to mapOf(3 to 4),
@@ -59,12 +60,12 @@ fun main() {
         mapOf(5 to 6) to mapOf(6 to 7),
         mapOf(6 to 7) to mapOf(8 to 9)
     )
-    for((key2, value2) in m10) {
-        if(m10[value2] == 5) {
-            println(m10[value2])
-            break
-        }
-    }
+//    //for((key2, value2) in m10) {
+//        if(m10[value2] == 5) {
+//            println(m10[value2])
+//            break
+//        }
+//    }
 //Задачи на подбор оптимального типа для словаря
 //Словарь библиотека: Ключи - автор книги, значения - список книг
     val m11 = mutableMapOf<String, List<String>>()

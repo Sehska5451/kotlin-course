@@ -1,3 +1,5 @@
+@file:Suppress("MISSING_DEPENDENCY_SUPERCLASS_IN_TYPE_ARGUMENT")
+
 package main.kotlin.lessons.lesson12
 
 fun main() {
@@ -133,7 +135,7 @@ fun main() {
 
 }
 
-fun filter(collection: List<Int>): Int {
+fun filter(collection: List<Int>): Any {
     val result = mutableListOf<Int>()
     for(i in collection) {
         if (i in 7..17) result.add(i)

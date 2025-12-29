@@ -45,7 +45,7 @@ enum class RealPropetiesTypes(val itsName: String) {
     companion object {
         fun printRealProperties() {
             entries
-                .sortedByDescending { it.itsName.length }
+                .sortedBy { it.itsName.length }
                 .forEach { println(it.itsName) }
         }
     }
@@ -78,4 +78,5 @@ enum class SolarSystem(val distanceToTheSunInMlnKm: Int, val planetMassInEarthMa
 
 fun main() {
     RealPropetiesTypes.printRealProperties()
+
 }

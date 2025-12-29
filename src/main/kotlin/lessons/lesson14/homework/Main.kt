@@ -4,7 +4,7 @@ fun main() {
 
 }
 object Moon {
-    fun visibility{
+    fun visibility(){
         val isVisible: Boolean = true
         val phase: String = "Full Moon"
         fun showPhase() {

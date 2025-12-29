@@ -76,6 +76,9 @@ fun main() {
         .also { logPerson(it) }
 
     logPerson(person)
+    println(person)
+    println(person1)
+    println(employee)
 
 
 

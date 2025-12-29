@@ -1,3 +1,5 @@
+@file:Suppress("MISSING_DEPENDENCY_SUPERCLASS_IN_TYPE_ARGUMENT")
+
 package main.kotlin.lessons.lesson24
 
 // 1 Создай функцию, которая:

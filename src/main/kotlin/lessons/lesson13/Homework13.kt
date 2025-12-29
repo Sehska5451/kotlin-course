@@ -51,7 +51,7 @@ fun main() {
 //8 В словаре хранятся результаты тестирования API (ключ — endpoint, значение — статус ответа в виде строки).
 // Для указанного endpoint найдите статус ответа, если endpoint отсутствует, предположите, что он не был протестирован.
     val apiTest =
-        mapOf<String, String>("endpoint1" to "200", "endpoint2" to "204", "endpoint3" to "503", "endpoint4" to "404")
+        mutableMapOf<String, String>("endpoint1" to "200", "endpoint2" to "204", "endpoint3" to "503", "endpoint4" to "404")
     val res8 = apiTest["endpoint4"] ?: "Не протестирован"
     val res81 = apiTest["endpoint5"] ?: "Не протестирован"
     println(res8)
@@ -103,16 +103,17 @@ fun main() {
     val funcFilterRes14 = funcModule.filter { it.value == "Failed" }
     println(funcFilterRes14)
 
-//15 Добавьте в изменяемый словарь с настройками тестовой среды настройки из другого словаря.
-    val addMap = configEnv.putAll(
-        apiTest(
-            "endpoint1" to "200",
-            "endpoint2" to "204",
-            "endpoint3" to "503",
-            "endpoint4" to "404"
-        )
-    )
-    println(addMap)
+////15 Добавьте в изменяемый словарь с настройками тестовой среды настройки из другого словаря.
+//    val addMap = configEnv.putAll(
+//        apiTest(
+//            "endpoint1" to "200",
+//            "endpoint2" to "204",
+//            "endpoint3" to "503",
+//            "endpoint4" to "404"
+//        )
+//    ).also {
+//        println(it)
+//    }
 
 //16 Объедините два неизменяемых словаря с данными о багах.
     val newBugMap = errorMap + funcModule

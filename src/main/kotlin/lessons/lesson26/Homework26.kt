@@ -35,7 +35,7 @@ fun readPropertiesFromFile() {
 }
 
 fun workspaceContent() {
-    val something = File("workspace/task1/example.txt")
+    val something = File("workspace")
     if (!something.isDirectory || !something.exists()) {
         println("Директория не найдена")
         return
@@ -78,12 +78,16 @@ fun main() {
 //
 //Создайте директорию workspace/task2/testDir.
 // Проверьте, является ли она директорией, и выведите её абсолютный путь.
-    val directory = File("workspace/task2/testDir").apply {
+    File("workspace/task2/testDir").run {
         mkdirs()
-        isDirectory
-        absolutePath
+        if(isDirectory) {
+            println("...")
+        } else {
+            println("Ne directoria")
+        }
+        println(absolutePath)
     }
-    println(directory)
+
 
 //Задача 3
 //
@@ -94,12 +98,11 @@ fun main() {
 // И так же для других директорий.
     val directory1 = File("workspace/task3/structure").apply {
         mkdirs()
-        resolve("workspace/task3/structure/myDir")
-        resolve("workspace/task3/structure/myDir/subDir1")
-        resolve("workspace/task3/structure/myDir/subDir2")
-        absolutePath
+        resolve("myDir").mkdirs()
+        resolve("myDir/subDir1").mkdirs()
+        resolve("myDir/subDir2").mkdirs()
     }
-    println(directory1)
+
 
 
 //Задача 4
@@ -109,10 +112,11 @@ fun main() {
 // Удалите директорию workspace/task4 со всем содержимым
     val directory2 = File("workspace/task4/temp").apply {
         mkdirs()
-        resolve("workspace/task4/temp/test1/test2/test3")
-        //delete()
+        resolve("test1").mkdirs()
+        resolve("test2").mkdirs()
+        resolve("test3").mkdirs()
+        parentFile.deleteRecursively()
     }
-    println(directory2)
 
 
 //Задача 5
@@ -134,13 +138,14 @@ fun main() {
 // Проверьте текст в файле.
     File("workspace/task7/docs").apply {
         parentFile.mkdirs()
-        checkFileExists("workspace/task7/docs", "readme.md")
         if (!checkFileExists("workspace/task7/docs", "readme.md")) {
             createNewFile()
             writeText("This is a README file.")
-            readText()
         }
         println(readText())
+        check(readText() == "This is a README file.") {
+            readText()
+        }
     }
 
 //Задача 8

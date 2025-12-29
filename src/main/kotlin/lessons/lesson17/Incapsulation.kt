@@ -12,17 +12,17 @@ class Account(private var balance: Double) {
         return balance
     }
 }
-
-fun main() {
-
-    val account = Account(0.0)
-    account.deposit(15.0)
-    println("Текущий баланс ${account.getBalance()}")
-    println("Хочу снять 12 и получаю ${account.withdraw(12.0)}")
-    println("Текущий баланс ${account.getBalance()}")
-    println("Хочу снять 10 но получаю ${account.withdraw(10.0)}")
-    println("Текущий баланс ${account.getBalance()}")
-}
+//
+//fun main() {
+//
+//    val account = Account(0.0)
+//    account.deposit(15.0)
+//    println("Текущий баланс ${account.getBalance()}")
+//    println("Хочу снять 12 и получаю ${account.withdraw(12.0)}")
+//    println("Текущий баланс ${account.getBalance()}")
+//    println("Хочу снять 10 но получаю ${account.withdraw(10.0)}")
+//    println("Текущий баланс ${account.getBalance()}")
+//}
 open class Person(private val name: String, protected val age: Int) {
     // Публичный метод
     fun greet() {

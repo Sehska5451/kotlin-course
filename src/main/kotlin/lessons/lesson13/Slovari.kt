@@ -1,5 +1,7 @@
 package main.kotlin.lessons.lesson13
 
+import kotlin.collections.Map.*
+
 fun main () {
 
     val fruitPrices = mapOf("apple" to 0.3, "banana" to 2.99, "melon" to 3.99)
@@ -12,19 +14,19 @@ fun main () {
         println("Key: $key, Value: $value")
     }
 
-    val entries = fruitPrices.entries
-    val keys = fruitPrices.keys
-    val values = fruitPrices.values
-    println(entries)
-    println(keys)
-    println(values)
-
-    val entries: Set<Map, Map.Entry<String, Double>> = fruitPrices.entries
-    val keys: Set<String> = fruitPrices.keys
-    val values: Collection<Double> = fruitPrices.values
-    println(entries)
-    println(keys)
-    println(values)
+    val entries1: Set<Entry<String, Double>> = fruitPrices.entries
+    val keys1: Set<String> = fruitPrices.keys
+    val values1: Collection<Double> = fruitPrices.values
+    println(entries1)
+    println(keys1)
+    println(values1)
+//
+//    val entries: Set<Map, Entry<Double, kotlin.String>> = fruitPrices.entries
+//    val keys: Set<String> = fruitPrices.keys
+//    val values: Collection<Double> = fruitPrices.values
+//    println(entries)
+//    println(keys)
+//    println(values)
 
     val priceOfPearOrElse = fruitPrices.getOrElse("pear") { 9999.9 }
     val priceOfApple = fruitPrices.getValue("apple")
@@ -39,29 +41,29 @@ fun main () {
     mutableFruit.remove("apple")
     mutableFruit.clear()
 
-    val containsKey = fruitPrices.containsKey("apple")
-    val containsValue = fruitPrices.containsValue(2.2)
-    val isEmpty = fruitPrices.isEmpty()
-    val isNotEmpty = fruitPrices.isNotEmpty()
-    val areAllFruitExpensive = fruitPrices.all { it.value > 1.0 }
-    val isAnyFruitCheap = fruitPrices.any { it.value < 1.0 }
+//    val containsKey = fruitPrices.containsKey("apple")
+//    val containsValue = fruitPrices.containsValue(2.2)
+//    val isEmpty = fruitPrices.isEmpty()
+//    val isNotEmpty = fruitPrices.isNotEmpty()
+//    val areAllFruitExpensive = fruitPrices.all { it.value > 1.0 }
+//    val isAnyFruitCheap = fruitPrices.any { it.value < 1.0 }
+//
+//    val filteredByPrice = fruitPrices.filter { it.value > 1.0 }
+//    val filteredByKeys = fruitPrices.filterKeys { it.startsWith("a") }
+//    val filteredByValue = fruitPrices.filterValues { it < 2.0 }
+//    val filteredNotApple = fruitPrices.filterNot { it.value == "apple" }
+//    val countExpensiveFriut = fruitPrices.count()
+//
+//    val increasedPrices = fruitPrices.mapValues { "${it.value * 1.1}" }
+//    val fruitNameUppercase = fruitPrices.mapKeys { it.key.uppercase() }
+//    val fruitList = fruitPrices.map { "${it.key} costs ${it.value}" }// преобразует словарь в список
+//
+//    val toMap = mutableFruit.toMap()
+//    val toMutableMap = fruitPrices.toMutableMap()
 
-    val filteredByPrice = fruitPrices.filter { it.value > 1.0 }
-    val filteredByKeys = fruitPrices.filterKeys { it.startsWith("a") }
-    val filteredByValue = fruitPrices.filterValues { it < 2.0 }
-    val filteredNotApple = fruitPrices.filterNot { it.value == "apple" }
-    val countExpensiveFriut = fruitPrices.count()
-
-    val increasedPrices = fruitPrices.mapValues { "${it.value * 1.1}" }
-    val fruitNameUppercase = fruitPrices.mapKeys { it.key.uppercase() }
-    val fruitList = fruitPrices.map { "${it.key} costs ${it.value}" }// преобразует словарь в список
-
-    val toMap = mutableFruit.toMap()
-    val toMutableMap = fruitPrices.toMutableMap()
-
-    fruitPrices.forEach { fruit, price ->
-        println("$fruit costs $price")
-    }
+//    fruitPrices.forEach { fruit, price ->
+//        println("$fruit costs $price")
+//    }
 
 
     fruitPrices.size
